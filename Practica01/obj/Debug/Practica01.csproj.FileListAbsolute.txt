@@ -1,0 +1,12 @@
+d:\Users\Darevalo\Desktop\Practica01\Practica01\bin\Debug\Practica01.exe.config
+d:\Users\Darevalo\Desktop\Practica01\Practica01\bin\Debug\Practica01.exe
+d:\Users\Darevalo\Desktop\Practica01\Practica01\bin\Debug\Practica01.pdb
+d:\Users\Darevalo\Desktop\Practica01\Practica01\obj\Debug\Practica01.csprojResolveAssemblyReference.cache
+d:\Users\Darevalo\Desktop\Practica01\Practica01\obj\Debug\Practica01.Properties.Resources.resources
+d:\Users\Darevalo\Desktop\Practica01\Practica01\obj\Debug\Practica01.csproj.GenerateResource.Cache
+d:\Users\Darevalo\Desktop\Practica01\Practica01\obj\Debug\Practica01.csproj.CoreCompileInputs.cache
+d:\Users\Darevalo\Desktop\Practica01\Practica01\obj\Debug\Practica01.exe
+d:\Users\Darevalo\Desktop\Practica01\Practica01\obj\Debug\Practica01.pdb
+d:\Users\Darevalo\Desktop\Practica01\Practica01\obj\Debug\Practica01.AgregarProceso.resources
+d:\Users\Darevalo\Desktop\Practica01\Practica01\obj\Debug\Practica01.WIN_Inicio.resources
+d:\Users\Darevalo\Desktop\Practica01\Practica01\obj\Debug\Practica01.WIN_Procesos.resources
