@@ -25,8 +25,8 @@ namespace Practica01
         string[] Operaciones = new string[4];
         //int Contador = 1; //Contador de Procesos
         string Oper;
-        string RutaLotesTxt = "d:\\Users\\Darevalo\\Desktop\\Nueva carpeta\\Lotes.txt";
-
+        string RutaLotesTxt = "C:\\Users\\Diego\\Desktop\\Lotes.txt";
+  
         Queue<Proceso> ColaProcesos = new Queue<Proceso>();//Cola de los Procesos
 
         
@@ -105,7 +105,7 @@ namespace Practica01
                         Resultado = 0;
                         break;
                 }
-                Proceso proceso = new Proceso(Nombre, Oper, TiempoMax, NumeroPrograma);
+                Proceso proceso = new Proceso(Nombre, Oper, TiempoMax, NumeroPrograma,Resultado);
                 ColaProcesos.Enqueue(proceso);
                 try
                 {
