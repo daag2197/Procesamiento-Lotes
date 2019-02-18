@@ -25,7 +25,7 @@ namespace Practica01
         string[] Operaciones = new string[4];
         //int Contador = 1; //Contador de Procesos
         string Oper;
-        string RutaLotesTxt = "C:\\Users\\Diego\\Desktop\\Lotes.txt";
+        string RutaLotesTxt = "Lotes.txt";
   
         Queue<Proceso> ColaProcesos = new Queue<Proceso>();//Cola de los Procesos
 

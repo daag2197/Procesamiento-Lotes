@@ -22,8 +22,8 @@ namespace Practica01
         int TiempoTranscurrido = 0;
         int TiempoRestante = 0;
         int TiempoTotal = 0;
-        string Ruta = "C:\\Users\\Diego\\Desktop\\Procesamiento.txt";
-        string RutaResultados = "C:\\Users\\Diego\\Desktop\\Resultados.txt";
+        string Ruta = "Procesamiento.txt";
+        string RutaResultados = "Resultados.txt";
         bool bandera = false;
         public WIN_Procesos(Queue<Lote> Lotes)
         {
