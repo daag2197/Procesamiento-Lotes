@@ -1,0 +1,248 @@
+Proceso en Ejecucion
+Nombre Programador: Pancho Operacion: 46-35 TME: 1 Numero de Programa: 1
+Esperando Entrada
+Id: 2 Nombre Programador: Pancho TME: 1
+Id: 3 Nombre Programador: Pancho TME: 3
+Id: 4 Nombre Programador: Pancho TME: 5
+Id: 5 Nombre Programador: Pancho TME: 3
+Id: 6 Nombre Programador: Diego TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+Proceso en Ejecucion
+Nombre Programador: Pancho Operacion: 91-36 TME: 1 Numero de Programa: 2
+Esperando Entrada
+Id: 3 Nombre Programador: Pancho TME: 3
+Id: 4 Nombre Programador: Pancho TME: 5
+Id: 5 Nombre Programador: Pancho TME: 3
+Id: 6 Nombre Programador: Diego TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+Proceso en Ejecucion
+Nombre Programador: Pancho Operacion: 59*72 TME: 3 Numero de Programa: 3
+Esperando Entrada
+Id: 4 Nombre Programador: Pancho TME: 5
+Id: 5 Nombre Programador: Pancho TME: 3
+Id: 6 Nombre Programador: Diego TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+Proceso en Ejecucion
+Nombre Programador: Pancho Operacion: 92+75 TME: 5 Numero de Programa: 4
+Esperando Entrada
+Id: 5 Nombre Programador: Pancho TME: 3
+Id: 6 Nombre Programador: Diego TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+Proceso en Ejecucion
+Nombre Programador: Pancho Operacion: 97*37 TME: 3 Numero de Programa: 5
+Esperando Entrada
+Id: 6 Nombre Programador: Diego TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+Proceso en Ejecucion
+Nombre Programador: Diego Operacion: 12-5 TME: 1 Numero de Programa: 6
+Esperando Entrada
+Esperando Entrada
+Id: 7 Nombre Programador: Alejandro TME: 2
+Id: 8 Nombre Programador: Alejandro TME: 1
+Id: 9 Nombre Programador: Alejandro TME: 1
+Id: 10 Nombre Programador: Alejandro TME: 1
+Id: 11 Nombre Programador: Diego TME: 4
+Id: 12 Nombre Programador: Diego TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+ID: 6 Operacion: 12-5 Resultado: 7
+Proceso en Ejecucion
+Nombre Programador: Alejandro Operacion: 86*23 TME: 2 Numero de Programa: 7
+Esperando Entrada
+Id: 8 Nombre Programador: Alejandro TME: 1
+Id: 9 Nombre Programador: Alejandro TME: 1
+Id: 10 Nombre Programador: Alejandro TME: 1
+Id: 11 Nombre Programador: Diego TME: 4
+Id: 12 Nombre Programador: Diego TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+ID: 6 Operacion: 12-5 Resultado: 7
+ID: 7 Operacion: 86*23 Resultado: 1978
+Proceso en Ejecucion
+Nombre Programador: Alejandro Operacion: 94*59 TME: 1 Numero de Programa: 8
+Esperando Entrada
+Id: 9 Nombre Programador: Alejandro TME: 1
+Id: 10 Nombre Programador: Alejandro TME: 1
+Id: 11 Nombre Programador: Diego TME: 4
+Id: 12 Nombre Programador: Diego TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+ID: 6 Operacion: 12-5 Resultado: 7
+ID: 7 Operacion: 86*23 Resultado: 1978
+ID: 8 Operacion: 94*59 Resultado: 5546
+Proceso en Ejecucion
+Nombre Programador: Alejandro Operacion: 93/33 TME: 1 Numero de Programa: 9
+Esperando Entrada
+Id: 10 Nombre Programador: Alejandro TME: 1
+Id: 11 Nombre Programador: Diego TME: 4
+Id: 12 Nombre Programador: Diego TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+ID: 6 Operacion: 12-5 Resultado: 7
+ID: 7 Operacion: 86*23 Resultado: 1978
+ID: 8 Operacion: 94*59 Resultado: 5546
+ID: 9 Operacion: 93/33 Resultado: 2
+Proceso en Ejecucion
+Nombre Programador: Alejandro Operacion: 40*47 TME: 1 Numero de Programa: 10
+Esperando Entrada
+Id: 11 Nombre Programador: Diego TME: 4
+Id: 12 Nombre Programador: Diego TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+ID: 6 Operacion: 12-5 Resultado: 7
+ID: 7 Operacion: 86*23 Resultado: 1978
+ID: 8 Operacion: 94*59 Resultado: 5546
+ID: 9 Operacion: 93/33 Resultado: 2
+ID: 10 Operacion: 40*47 Resultado: 1880
+Proceso en Ejecucion
+Nombre Programador: Diego Operacion: 83+86 TME: 4 Numero de Programa: 11
+Esperando Entrada
+Id: 12 Nombre Programador: Diego TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+ID: 6 Operacion: 12-5 Resultado: 7
+ID: 7 Operacion: 86*23 Resultado: 1978
+ID: 8 Operacion: 94*59 Resultado: 5546
+ID: 9 Operacion: 93/33 Resultado: 2
+ID: 10 Operacion: 40*47 Resultado: 1880
+ID: 11 Operacion: 83+86 Resultado: 169
+Proceso en Ejecucion
+Nombre Programador: Diego Operacion: 60-10 TME: 1 Numero de Programa: 12
+Esperando Entrada
+Esperando Entrada
+Id: 13 Nombre Programador: Pancho TME: 6
+Id: 14 Nombre Programador: Pancho TME: 3
+Id: 15 Nombre Programador: Pancho TME: 5
+Id: 16 Nombre Programador: Alejandro TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+ID: 6 Operacion: 12-5 Resultado: 7
+ID: 7 Operacion: 86*23 Resultado: 1978
+ID: 8 Operacion: 94*59 Resultado: 5546
+ID: 9 Operacion: 93/33 Resultado: 2
+ID: 10 Operacion: 40*47 Resultado: 1880
+ID: 11 Operacion: 83+86 Resultado: 169
+ID: 12 Operacion: 60-10 Resultado: 50
+Proceso en Ejecucion
+Nombre Programador: Pancho Operacion: 96/87 TME: 6 Numero de Programa: 13
+Esperando Entrada
+Id: 14 Nombre Programador: Pancho TME: 3
+Id: 15 Nombre Programador: Pancho TME: 5
+Id: 16 Nombre Programador: Alejandro TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+ID: 6 Operacion: 12-5 Resultado: 7
+ID: 7 Operacion: 86*23 Resultado: 1978
+ID: 8 Operacion: 94*59 Resultado: 5546
+ID: 9 Operacion: 93/33 Resultado: 2
+ID: 10 Operacion: 40*47 Resultado: 1880
+ID: 11 Operacion: 83+86 Resultado: 169
+ID: 12 Operacion: 60-10 Resultado: 50
+ID: 13 Operacion: 96/87 Resultado: 1
+Proceso en Ejecucion
+Nombre Programador: Pancho Operacion: 36+19 TME: 3 Numero de Programa: 14
+Esperando Entrada
+Id: 15 Nombre Programador: Pancho TME: 5
+Id: 16 Nombre Programador: Alejandro TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+ID: 6 Operacion: 12-5 Resultado: 7
+ID: 7 Operacion: 86*23 Resultado: 1978
+ID: 8 Operacion: 94*59 Resultado: 5546
+ID: 9 Operacion: 93/33 Resultado: 2
+ID: 10 Operacion: 40*47 Resultado: 1880
+ID: 11 Operacion: 83+86 Resultado: 169
+ID: 12 Operacion: 60-10 Resultado: 50
+ID: 13 Operacion: 96/87 Resultado: 1
+ID: 14 Operacion: 36+19 Resultado: 55
+Proceso en Ejecucion
+Nombre Programador: Pancho Operacion: 34-2 TME: 5 Numero de Programa: 15
+Esperando Entrada
+Id: 16 Nombre Programador: Alejandro TME: 1
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+ID: 6 Operacion: 12-5 Resultado: 7
+ID: 7 Operacion: 86*23 Resultado: 1978
+ID: 8 Operacion: 94*59 Resultado: 5546
+ID: 9 Operacion: 93/33 Resultado: 2
+ID: 10 Operacion: 40*47 Resultado: 1880
+ID: 11 Operacion: 83+86 Resultado: 169
+ID: 12 Operacion: 60-10 Resultado: 50
+ID: 13 Operacion: 96/87 Resultado: 1
+ID: 14 Operacion: 36+19 Resultado: 55
+ID: 15 Operacion: 34-2 Resultado: 32
+Proceso en Ejecucion
+Nombre Programador: Alejandro Operacion: 4+40 TME: 1 Numero de Programa: 16
+Esperando Entrada
+Procesos Concluidos
+ID: 1 Operacion: 46-35 Resultado: 11
+ID: 2 Operacion: 91-36 Resultado: 55
+ID: 3 Operacion: 59*72 Resultado: 4248
+ID: 4 Operacion: 92+75 Resultado: 167
+ID: 5 Operacion: 97*37 Resultado: 3589
+ID: 6 Operacion: 12-5 Resultado: 7
+ID: 7 Operacion: 86*23 Resultado: 1978
+ID: 8 Operacion: 94*59 Resultado: 5546
+ID: 9 Operacion: 93/33 Resultado: 2
+ID: 10 Operacion: 40*47 Resultado: 1880
+ID: 11 Operacion: 83+86 Resultado: 169
+ID: 12 Operacion: 60-10 Resultado: 50
+ID: 13 Operacion: 96/87 Resultado: 1
+ID: 14 Operacion: 36+19 Resultado: 55
+ID: 15 Operacion: 34-2 Resultado: 32
+ID: 16 Operacion: 4+40 Resultado: 44

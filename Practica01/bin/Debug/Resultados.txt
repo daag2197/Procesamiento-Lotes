@@ -1,0 +1,16 @@
+Resultado: 11 Numero de Lote: 1
+Resultado: 55 Numero de Lote: 1
+Resultado: 4248 Numero de Lote: 1
+Resultado: 167 Numero de Lote: 1
+Resultado: 3589 Numero de Lote: 1
+Resultado: 7 Numero de Lote: 1
+Resultado: 1978 Numero de Lote: 2
+Resultado: 5546 Numero de Lote: 2
+Resultado: 2 Numero de Lote: 2
+Resultado: 1880 Numero de Lote: 2
+Resultado: 169 Numero de Lote: 2
+Resultado: 50 Numero de Lote: 2
+Resultado: 1 Numero de Lote: 3
+Resultado: 55 Numero de Lote: 3
+Resultado: 32 Numero de Lote: 3
+Resultado: 44 Numero de Lote: 3
