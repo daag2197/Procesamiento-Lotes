@@ -28,12 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.STC_Titulo = new System.Windows.Forms.Label();
             this.STC_NumeroProcesos = new System.Windows.Forms.Label();
             this.BTN_Agregar = new System.Windows.Forms.Button();
-            this.STC_Titulo = new System.Windows.Forms.Label();
             this.EDT_NumeroProcesos = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.EDT_NumeroProcesos)).BeginInit();
             this.SuspendLayout();
+            // 
+            // STC_Titulo
+            // 
+            this.STC_Titulo.AutoSize = true;
+            this.STC_Titulo.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.STC_Titulo.Location = new System.Drawing.Point(102, 13);
+            this.STC_Titulo.Name = "STC_Titulo";
+            this.STC_Titulo.Size = new System.Drawing.Size(81, 23);
+            this.STC_Titulo.TabIndex = 3;
+            this.STC_Titulo.Text = "Procesos";
             // 
             // STC_NumeroProcesos
             // 
@@ -55,16 +65,6 @@
             this.BTN_Agregar.Text = "Agregar Procesos";
             this.BTN_Agregar.UseVisualStyleBackColor = true;
             this.BTN_Agregar.Click += new System.EventHandler(this.BTN_Agregar_Click);
-            // 
-            // STC_Titulo
-            // 
-            this.STC_Titulo.AutoSize = true;
-            this.STC_Titulo.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STC_Titulo.Location = new System.Drawing.Point(102, 13);
-            this.STC_Titulo.Name = "STC_Titulo";
-            this.STC_Titulo.Size = new System.Drawing.Size(81, 23);
-            this.STC_Titulo.TabIndex = 3;
-            this.STC_Titulo.Text = "Procesos";
             // 
             // EDT_NumeroProcesos
             // 
@@ -92,10 +92,9 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.Label STC_Titulo;
         private System.Windows.Forms.Label STC_NumeroProcesos;
         private System.Windows.Forms.Button BTN_Agregar;
-        private System.Windows.Forms.Label STC_Titulo;
         private System.Windows.Forms.NumericUpDown EDT_NumeroProcesos;
     }
 }

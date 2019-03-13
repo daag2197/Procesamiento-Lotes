@@ -14,3 +14,11 @@ Resultado: 1 Numero de Lote: 3
 Resultado: 55 Numero de Lote: 3
 Resultado: 32 Numero de Lote: 3
 Resultado: 44 Numero de Lote: 3
+Resultado: 68 Numero de Lote: 1
+Resultado: 8 Numero de Lote: 1
+Resultado: 3818 Numero de Lote: 1
+Resultado: 80 Numero de Lote: 1
+Resultado: 40 Numero de Lote: 1
+Resultado: 39 Numero de Lote: 1
+Resultado: 14 Numero de Lote: 1
+Resultado: 5 Numero de Lote: 1

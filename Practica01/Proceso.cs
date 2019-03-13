@@ -12,8 +12,8 @@ namespace Practica01
         public string Operacion;
         public int TiempoMaximo;
         public int NumPrograma;
-        public int Resultado;
-        public Proceso(string Nombre,string Operacion,int TiempoMaximo,int NumPrograma,int Resultado)
+        public string Resultado;
+        public Proceso(string Nombre,string Operacion,int TiempoMaximo,int NumPrograma,string Resultado)
         {
             this.Nombre = Nombre;
             this.Operacion = Operacion;

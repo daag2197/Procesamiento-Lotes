@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Practica01;
 using System.IO;
+using System.Threading;
 
 namespace Practica01
 {
@@ -18,32 +19,39 @@ namespace Practica01
         Lote LoteActual = new Lote();
         Proceso ProcesoActual;
         List<Proceso> Concluidos = new List<Proceso>();
-        List<int> Resultados = new List<int>();
+        List<string> Resultados = new List<string>();
         int TiempoTranscurrido = 0;
         int TiempoRestante = 0;
         int TiempoTotal = 0;
         string Ruta = "Procesamiento.txt";
         string RutaResultados = "Resultados.txt";
         bool bandera = false;
+        bool isPaused = false;
+
         public WIN_Procesos(Queue<Lote> Lotes)
         {
             this.Lotes = Lotes;
             InitializeComponent();
+
+            /*ThreadStart Crono = new ThreadStart(IniciarTimer);
+            Thread hilo = new Thread(Crono);
+            hilo.Start();*/
             Cronometro.Start();
         }
-        
         private void Cronometro_Tick(object sender, EventArgs e)
         {
-            if(TiempoRestante > 0)
+            this.Focus();
+
+            if (TiempoRestante > 0)
             {
                 Cont.Text = (++TiempoTotal).ToString();
                 TT.Text = (++TiempoTranscurrido).ToString();
                 TR.Text = (--TiempoRestante).ToString();
             }
-            else if(LoteActual.Procesos.Count > 0)
+            else if (LoteActual.Procesos.Count > 0)
             {
                 bandera = true;
-                if(ProcesoActual != null)
+                if (ProcesoActual != null)
                 {
                     Concluidos.Add(ProcesoActual);
                     Resultados.Add(ProcesoActual.Resultado);
@@ -59,16 +67,16 @@ namespace Practica01
                 TiempoTotal = 0;
                 TR.Text = TiempoRestante.ToString();
                 TT.Text = TiempoTotal.ToString();
-                Espera.DataSource = SetEspera(LoteActual,bandera);
+                Espera.DataSource = SetEspera(LoteActual, bandera);
             }
-            else if(Lotes.Count > 0)
+            else if (Lotes.Count > 0)
             {
                 LoteActual = Lotes.Dequeue();
-                Espera.DataSource = SetEspera(LoteActual,bandera);
+                Espera.DataSource = SetEspera(LoteActual, bandera);
             }
             else
             {
-                if(ProcesoActual != null)
+                if (ProcesoActual != null)
                 {
                     Concluidos.Add(ProcesoActual);
                     Resultados.Add(ProcesoActual.Resultado);
@@ -77,7 +85,7 @@ namespace Practica01
                     Ejecucion.DataSource = null;
                     int Contador = 0;
                     int numLote = 1;
-                    foreach(int resultado in Resultados)
+                    foreach (string resultado in Resultados)
                     {
                         try
                         {
@@ -86,7 +94,7 @@ namespace Practica01
                                 using (StreamWriter sw = File.CreateText(RutaResultados))
                                 {
                                     numLote = 1;
-                                    sw.WriteLine("Resultado: " + resultado  + " Numero de Lote: " + numLote);
+                                    sw.WriteLine("Resultado: " + resultado + " Numero de Lote: " + numLote);
                                     sw.Close();
                                 }
                             }
@@ -94,7 +102,7 @@ namespace Practica01
                             {
                                 using (StreamWriter sw = File.AppendText(RutaResultados))
                                 {
-                                    if(Contador == 6)
+                                    if (Contador == 6)
                                     {
                                         Contador = 0;
                                         numLote++;
@@ -118,14 +126,14 @@ namespace Practica01
             System.Threading.Thread.Sleep(1000);
         }
 
-        private DataTable SetEspera(Lote lote,bool bandera)
+        private DataTable SetEspera(Lote lote, bool bandera)
         {
 
             DataTable dt = new DataTable();
             dt.Columns.Add("ID");
             dt.Columns.Add("Nombre Programador");
             dt.Columns.Add("Tiempo Maximo Espera");
-            if(bandera == true)
+            if (bandera == true)
             {
                 try
                 {
@@ -154,7 +162,7 @@ namespace Practica01
             foreach (Proceso p in lote.Procesos)
             {
                 dt.Rows.Add(p.NumPrograma, p.Nombre, p.TiempoMaximo);
-                if(bandera == true)
+                if (bandera == true)
                 {
                     try
                     {
@@ -180,7 +188,7 @@ namespace Practica01
             dt.Columns.Add("Operacion");
             dt.Columns.Add("Tiempo Maximo Espera");
             dt.Columns.Add("Numero de Programa");
-    
+
             dt.Rows.Add(p.Nombre, p.Operacion, p.TiempoMaximo, p.NumPrograma);
             try
             {
@@ -191,7 +199,7 @@ namespace Practica01
                     sw.Close();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Exeption: " + ex.Message);
             }
@@ -212,13 +220,13 @@ namespace Practica01
                     sw.Close();
                 }
             }
-            catch(Exception expt)
+            catch (Exception expt)
             {
                 MessageBox.Show("Exeption: " + expt.Message);
             }
             foreach (Proceso p in L)
             {
-                dt.Rows.Add(p.NumPrograma, p.Operacion,p.Resultado);
+                dt.Rows.Add(p.NumPrograma, p.Operacion, p.Resultado);
                 try
                 {
                     using (StreamWriter sw = File.AppendText(Ruta))
@@ -233,6 +241,54 @@ namespace Practica01
                 }
             }
             return dt;
+        }
+
+        private void Espera_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyValue)
+            {
+                case (int)Keys.I:
+                    if(isPaused == false)
+                    {
+                        Lote miLote = new Lote();
+                        miLote = LoteActual;
+                        LoteActual.Procesos.Enqueue(ProcesoActual);
+                        if (miLote.Procesos.Count > 0)
+                        {
+                            ProcesoActual = miLote.Procesos.Dequeue();
+                            SetEspera(miLote,true);
+                        }
+                        else
+                        {
+                            ProcesoActual = LoteActual.Procesos.Dequeue();
+                            SetEspera(LoteActual, true);
+                        }
+                        SetActual(ProcesoActual);
+                    }
+                    break;
+                case (int)Keys.E:
+                    if(isPaused == false)
+                    {
+                        ProcesoActual.Resultado = "Error";
+                        ProcesoActual.TiempoMaximo = 0;
+                        TiempoRestante = 0;
+                    }
+                    break;
+                case (int)Keys.P:
+                    if (isPaused == false)
+                    {
+                        Cronometro.Stop();
+                        isPaused = true;
+                    }
+                    break;
+                case (int)Keys.C:
+                    if (isPaused)
+                    {
+                        Cronometro.Start();
+                        isPaused = false;
+                    }
+                    break;
+            }
         }
     }
 }

@@ -25,8 +25,6 @@ C:\Users\Diego\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practic
 d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\bin\Debug\Practica01.exe.config
 d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\bin\Debug\Practica01.exe
 d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\bin\Debug\Practica01.pdb
-d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.csprojResolveAssemblyReference.cache
-d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.AgregarProceso.resources
 d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.WIN_Inicio.resources
 d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.WIN_Procesos.resources
 d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.Properties.Resources.resources
@@ -34,3 +32,4 @@ d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Prac
 d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.csproj.CoreCompileInputs.cache
 d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.exe
 d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.pdb
+D:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.csprojAssemblyReference.cache

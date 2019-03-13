@@ -55,20 +55,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(563, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(422, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(420, 49);
+            this.label1.Size = new System.Drawing.Size(333, 39);
             this.label1.TabIndex = 4;
             this.label1.Text = "Procesamiento de Lotes";
             // 
             // LotesPendientes
             // 
             this.LotesPendientes.AutoSize = true;
-            this.LotesPendientes.Location = new System.Drawing.Point(16, 81);
-            this.LotesPendientes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LotesPendientes.Location = new System.Drawing.Point(12, 66);
             this.LotesPendientes.Name = "LotesPendientes";
-            this.LotesPendientes.Size = new System.Drawing.Size(113, 17);
+            this.LotesPendientes.Size = new System.Drawing.Size(85, 13);
             this.LotesPendientes.TabIndex = 5;
             this.LotesPendientes.Text = "Lotes Faltantes: ";
             // 
@@ -77,21 +75,20 @@
             this.Espera.AllowUserToAddRows = false;
             this.Espera.AllowUserToDeleteRows = false;
             this.Espera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Espera.Location = new System.Drawing.Point(21, 238);
-            this.Espera.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Espera.Location = new System.Drawing.Point(16, 193);
             this.Espera.Name = "Espera";
             this.Espera.ReadOnly = true;
-            this.Espera.Size = new System.Drawing.Size(373, 438);
+            this.Espera.Size = new System.Drawing.Size(280, 356);
             this.Espera.TabIndex = 6;
+            this.Espera.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Espera_KeyDown);
             // 
             // STC_ProcesosEspera
             // 
             this.STC_ProcesosEspera.AutoSize = true;
             this.STC_ProcesosEspera.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STC_ProcesosEspera.Location = new System.Drawing.Point(16, 206);
-            this.STC_ProcesosEspera.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.STC_ProcesosEspera.Location = new System.Drawing.Point(12, 167);
             this.STC_ProcesosEspera.Name = "STC_ProcesosEspera";
-            this.STC_ProcesosEspera.Size = new System.Drawing.Size(200, 29);
+            this.STC_ProcesosEspera.Size = new System.Drawing.Size(159, 23);
             this.STC_ProcesosEspera.TabIndex = 7;
             this.STC_ProcesosEspera.Text = "Procesos en Espera";
             // 
@@ -100,21 +97,19 @@
             this.Ejecucion.AllowUserToAddRows = false;
             this.Ejecucion.AllowUserToDeleteRows = false;
             this.Ejecucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Ejecucion.Location = new System.Drawing.Point(419, 238);
-            this.Ejecucion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Ejecucion.Location = new System.Drawing.Point(314, 193);
             this.Ejecucion.Name = "Ejecucion";
             this.Ejecucion.ReadOnly = true;
-            this.Ejecucion.Size = new System.Drawing.Size(600, 438);
+            this.Ejecucion.Size = new System.Drawing.Size(450, 356);
             this.Ejecucion.TabIndex = 8;
             // 
             // STC_ProcesoEjecucion
             // 
             this.STC_ProcesoEjecucion.AutoSize = true;
             this.STC_ProcesoEjecucion.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STC_ProcesoEjecucion.Location = new System.Drawing.Point(413, 206);
-            this.STC_ProcesoEjecucion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.STC_ProcesoEjecucion.Location = new System.Drawing.Point(310, 167);
             this.STC_ProcesoEjecucion.Name = "STC_ProcesoEjecucion";
-            this.STC_ProcesoEjecucion.Size = new System.Drawing.Size(220, 29);
+            this.STC_ProcesoEjecucion.Size = new System.Drawing.Size(172, 23);
             this.STC_ProcesoEjecucion.TabIndex = 9;
             this.STC_ProcesoEjecucion.Text = "Proceso en Ejecucion";
             // 
@@ -122,10 +117,9 @@
             // 
             this.STC_ProcesoFin.AutoSize = true;
             this.STC_ProcesoFin.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.STC_ProcesoFin.Location = new System.Drawing.Point(1041, 206);
-            this.STC_ProcesoFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.STC_ProcesoFin.Location = new System.Drawing.Point(781, 167);
             this.STC_ProcesoFin.Name = "STC_ProcesoFin";
-            this.STC_ProcesoFin.Size = new System.Drawing.Size(219, 29);
+            this.STC_ProcesoFin.Size = new System.Drawing.Size(173, 23);
             this.STC_ProcesoFin.TabIndex = 11;
             this.STC_ProcesoFin.Text = "Procesos Terminados";
             // 
@@ -134,11 +128,10 @@
             this.Terminado.AllowUserToAddRows = false;
             this.Terminado.AllowUserToDeleteRows = false;
             this.Terminado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Terminado.Location = new System.Drawing.Point(1047, 238);
-            this.Terminado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Terminado.Location = new System.Drawing.Point(785, 193);
             this.Terminado.Name = "Terminado";
             this.Terminado.ReadOnly = true;
-            this.Terminado.Size = new System.Drawing.Size(467, 438);
+            this.Terminado.Size = new System.Drawing.Size(350, 356);
             this.Terminado.TabIndex = 10;
             // 
             // Cronometro
@@ -148,74 +141,69 @@
             // STC_TiempoTranscurrido
             // 
             this.STC_TiempoTranscurrido.AutoSize = true;
-            this.STC_TiempoTranscurrido.Location = new System.Drawing.Point(16, 114);
-            this.STC_TiempoTranscurrido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.STC_TiempoTranscurrido.Location = new System.Drawing.Point(12, 93);
             this.STC_TiempoTranscurrido.Name = "STC_TiempoTranscurrido";
-            this.STC_TiempoTranscurrido.Size = new System.Drawing.Size(148, 17);
+            this.STC_TiempoTranscurrido.Size = new System.Drawing.Size(110, 13);
             this.STC_TiempoTranscurrido.TabIndex = 12;
             this.STC_TiempoTranscurrido.Text = "Tiempo Transcurrido: ";
             // 
             // STC_TiempoRestante
             // 
             this.STC_TiempoRestante.AutoSize = true;
-            this.STC_TiempoRestante.Location = new System.Drawing.Point(17, 143);
-            this.STC_TiempoRestante.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.STC_TiempoRestante.Location = new System.Drawing.Point(13, 116);
             this.STC_TiempoRestante.Name = "STC_TiempoRestante";
-            this.STC_TiempoRestante.Size = new System.Drawing.Size(124, 17);
+            this.STC_TiempoRestante.Size = new System.Drawing.Size(94, 13);
             this.STC_TiempoRestante.TabIndex = 13;
             this.STC_TiempoRestante.Text = "Tiempo Restante: ";
             // 
             // STC_TiempoTotal
             // 
             this.STC_TiempoTotal.AutoSize = true;
-            this.STC_TiempoTotal.Location = new System.Drawing.Point(17, 174);
-            this.STC_TiempoTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.STC_TiempoTotal.Location = new System.Drawing.Point(13, 141);
             this.STC_TiempoTotal.Name = "STC_TiempoTotal";
-            this.STC_TiempoTotal.Size = new System.Drawing.Size(99, 17);
+            this.STC_TiempoTotal.Size = new System.Drawing.Size(75, 13);
             this.STC_TiempoTotal.TabIndex = 14;
             this.STC_TiempoTotal.Text = "Tiempo Total: ";
             // 
             // Cont
             // 
             this.Cont.AutoSize = true;
-            this.Cont.Location = new System.Drawing.Point(141, 174);
-            this.Cont.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Cont.Location = new System.Drawing.Point(106, 141);
             this.Cont.Name = "Cont";
-            this.Cont.Size = new System.Drawing.Size(0, 17);
+            this.Cont.Size = new System.Drawing.Size(0, 13);
             this.Cont.TabIndex = 15;
             // 
             // TT
             // 
             this.TT.AutoSize = true;
-            this.TT.Location = new System.Drawing.Point(181, 114);
-            this.TT.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TT.Location = new System.Drawing.Point(136, 93);
             this.TT.Name = "TT";
-            this.TT.Size = new System.Drawing.Size(0, 17);
+            this.TT.Size = new System.Drawing.Size(0, 13);
             this.TT.TabIndex = 16;
             // 
             // TR
             // 
             this.TR.AutoSize = true;
-            this.TR.Location = new System.Drawing.Point(181, 143);
-            this.TR.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TR.Location = new System.Drawing.Point(136, 116);
             this.TR.Name = "TR";
-            this.TR.Size = new System.Drawing.Size(0, 17);
+            this.TR.Size = new System.Drawing.Size(0, 13);
             this.TR.TabIndex = 17;
             // 
             // ContadorLotes
             // 
             this.ContadorLotes.AutoSize = true;
-            this.ContadorLotes.Location = new System.Drawing.Point(184, 81);
+            this.ContadorLotes.Location = new System.Drawing.Point(138, 66);
+            this.ContadorLotes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ContadorLotes.Name = "ContadorLotes";
-            this.ContadorLotes.Size = new System.Drawing.Size(46, 17);
+            this.ContadorLotes.Size = new System.Drawing.Size(35, 13);
             this.ContadorLotes.TabIndex = 18;
             this.ContadorLotes.Text = "label2";
             // 
             // WIN_Procesos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1579, 690);
+            this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.ContadorLotes);
             this.Controls.Add(this.TR);
             this.Controls.Add(this.TT);
@@ -231,7 +219,6 @@
             this.Controls.Add(this.Espera);
             this.Controls.Add(this.LotesPendientes);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "WIN_Procesos";
             this.Text = "Procesos";
             ((System.ComponentModel.ISupportInitialize)(this.Espera)).EndInit();
