@@ -7,3 +7,14 @@ Nombre Programador: Diego Operación: * Tiempo Maximo: 6 Numero de Programa: 6
 Nombre Programador: Diego Operación: / Tiempo Maximo: 5 Numero de Programa: 7
 Nombre Programador: Pancho Operación: * Tiempo Maximo: 5 Numero de Programa: 8
 Nombre Programador: Diego Operación: * Tiempo Maximo: 4 Numero de Programa: 9
+Nombre Programador: Pancho Operación: * Tiempo Maximo: 1 Numero de Programa: 1
+Nombre Programador: Alejandro Operación: - Tiempo Maximo: 3 Numero de Programa: 2
+Nombre Programador: Alejandro Operación: + Tiempo Maximo: 5 Numero de Programa: 3
+Nombre Programador: Diego Operación: - Tiempo Maximo: 4 Numero de Programa: 4
+Nombre Programador: Pancho Operación: - Tiempo Maximo: 4 Numero de Programa: 5
+Nombre Programador: Pancho Operación: / Tiempo Maximo: 1 Numero de Programa: 6
+Nombre Programador: Diego Operación: * Tiempo Maximo: 3 Numero de Programa: 7
+Nombre Programador: Diego Operación: - Tiempo Maximo: 1 Numero de Programa: 8
+Nombre Programador: Pancho Operación: * Tiempo Maximo: 3 Numero de Programa: 1
+Nombre Programador: Pancho Operación: / Tiempo Maximo: 2 Numero de Programa: 2
+Nombre Programador: Alejandro Operación: + Tiempo Maximo: 5 Numero de Programa: 3
