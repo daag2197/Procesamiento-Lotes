@@ -45,9 +45,15 @@
             this.TT = new System.Windows.Forms.Label();
             this.TR = new System.Windows.Forms.Label();
             this.ContadorLotes = new System.Windows.Forms.Label();
+            this.Bloqueados = new System.Windows.Forms.DataGridView();
+            this.Nuevos = new System.Windows.Forms.DataGridView();
+            this.STC_Nuevos = new System.Windows.Forms.Label();
+            this.STC_Bloqueados = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Espera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ejecucion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Terminado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bloqueados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nuevos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -199,11 +205,57 @@
             this.ContadorLotes.TabIndex = 18;
             this.ContadorLotes.Text = "label2";
             // 
+            // Bloqueados
+            // 
+            this.Bloqueados.AllowUserToAddRows = false;
+            this.Bloqueados.AllowUserToDeleteRows = false;
+            this.Bloqueados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Bloqueados.Location = new System.Drawing.Point(604, 618);
+            this.Bloqueados.Name = "Bloqueados";
+            this.Bloqueados.ReadOnly = true;
+            this.Bloqueados.Size = new System.Drawing.Size(350, 356);
+            this.Bloqueados.TabIndex = 19;
+            // 
+            // Nuevos
+            // 
+            this.Nuevos.AllowUserToAddRows = false;
+            this.Nuevos.AllowUserToDeleteRows = false;
+            this.Nuevos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Nuevos.Location = new System.Drawing.Point(139, 618);
+            this.Nuevos.Name = "Nuevos";
+            this.Nuevos.ReadOnly = true;
+            this.Nuevos.Size = new System.Drawing.Size(350, 356);
+            this.Nuevos.TabIndex = 20;
+            // 
+            // STC_Nuevos
+            // 
+            this.STC_Nuevos.AutoSize = true;
+            this.STC_Nuevos.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.STC_Nuevos.Location = new System.Drawing.Point(137, 592);
+            this.STC_Nuevos.Name = "STC_Nuevos";
+            this.STC_Nuevos.Size = new System.Drawing.Size(142, 23);
+            this.STC_Nuevos.TabIndex = 21;
+            this.STC_Nuevos.Text = "Procesos Nuevos";
+            // 
+            // STC_Bloqueados
+            // 
+            this.STC_Bloqueados.AutoSize = true;
+            this.STC_Bloqueados.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.STC_Bloqueados.Location = new System.Drawing.Point(600, 592);
+            this.STC_Bloqueados.Name = "STC_Bloqueados";
+            this.STC_Bloqueados.Size = new System.Drawing.Size(174, 23);
+            this.STC_Bloqueados.TabIndex = 22;
+            this.STC_Bloqueados.Text = "Procesos Bloqueados";
+            // 
             // WIN_Procesos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.ClientSize = new System.Drawing.Size(1218, 986);
+            this.Controls.Add(this.STC_Bloqueados);
+            this.Controls.Add(this.STC_Nuevos);
+            this.Controls.Add(this.Nuevos);
+            this.Controls.Add(this.Bloqueados);
             this.Controls.Add(this.ContadorLotes);
             this.Controls.Add(this.TR);
             this.Controls.Add(this.TT);
@@ -224,6 +276,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Espera)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ejecucion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Terminado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bloqueados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Nuevos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,5 +301,9 @@
         private System.Windows.Forms.Label TT;
         private System.Windows.Forms.Label TR;
         private System.Windows.Forms.Label ContadorLotes;
+        private System.Windows.Forms.DataGridView Bloqueados;
+        private System.Windows.Forms.DataGridView Nuevos;
+        private System.Windows.Forms.Label STC_Nuevos;
+        private System.Windows.Forms.Label STC_Bloqueados;
     }
 }

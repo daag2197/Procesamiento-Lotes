@@ -17,10 +17,10 @@ namespace Practica01
     {
         Queue<Proceso> ProcesosDiagrama = new Queue<Proceso>();//Lista de Procesos Listos
         Queue<Proceso> ProcesosNuevos = new Queue<Proceso>();//Lista de Procesos Nuevos
+        Queue<Proceso> ProcesosBloqueados = new Queue<Proceso>();//Procesos Bloqueados
+
         List<Proceso> Concluidos = new List<Proceso>();//Procesos Terminados
 
-        Queue<Lote> Lotes = new Queue<Lote>();
-        Lote LoteActual = new Lote();
         Proceso ProcesoActual;
         
         List<string> Resultados = new List<string>();
@@ -30,8 +30,8 @@ namespace Practica01
         string Ruta = "Procesamiento.txt";
         string RutaResultados = "Resultados.txt";
         bool bandera = false;
+        bool banderas = false;
         bool isPaused = false;
-        bool PrimeraVuelta;
 
         public WIN_Procesos(Queue<Proceso> ProcesosNuevos)
         {
@@ -50,8 +50,17 @@ namespace Practica01
                     Ejecucion.DataSource = SetActual(ProcesoActual);
                     bandera = true;
                 }
-                ProcesosDiagrama.Enqueue(ProcesosNuevos.Dequeue());
-                Espera.DataSource = SetEspera(ProcesosDiagrama, bandera);
+                if(ProcesosNuevos.Count > 0)
+                {
+                    ProcesosDiagrama.Enqueue(ProcesosNuevos.Dequeue());
+                    Espera.DataSource = SetEspera(ProcesosDiagrama, bandera);
+                    Nuevos.DataSource = SetEspera(ProcesosNuevos, bandera);
+                }
+                else
+                {
+                    break;
+                }
+                
             }
             
             Cronometro.Start();
@@ -70,43 +79,26 @@ namespace Practica01
             {
                 if(ProcesoActual != null)
                 {
-                    if(PrimeraVuelta == true)
-                    {
-                        Concluidos.Add(ProcesoActual);
-                        Resultados.Add(ProcesoActual.Resultado);
-                        PrimeraVuelta = false;
-                    }
-                    if (Concluidos.Count > 0)
-                    {
-                        Terminado.DataSource = SetCompletados(Concluidos);
-                    }
-                }
-            }
-            else if (LoteActual.Procesos.Count > 0)
-            {
-                bandera = true;
-                if (ProcesoActual != null)
-                {
                     Concluidos.Add(ProcesoActual);
                     Resultados.Add(ProcesoActual.Resultado);
+
                     if (Concluidos.Count > 0)
                     {
                         Terminado.DataSource = SetCompletados(Concluidos);
                     }
+                    ProcesoActual = ProcesosDiagrama.Dequeue();
+                    if(ProcesosNuevos.Count > 0)
+                    {    
+                        ProcesosDiagrama.Enqueue(ProcesosNuevos.Dequeue());
+                    } 
+                    Ejecucion.DataSource = SetActual(ProcesoActual);
+                    TiempoRestante = ProcesoActual.TiempoMaximo;
+                    TiempoTotal = 0;
+                    TR.Text = TiempoRestante.ToString();
+                    TT.Text = TiempoTotal.ToString();
+                    Espera.DataSource = SetEspera(ProcesosDiagrama, bandera);
+                    Nuevos.DataSource = SetEspera(ProcesosNuevos, bandera);
                 }
-                ProcesoActual = LoteActual.Procesos.Dequeue();
-                Espera.DataSource = Lotes;
-                Ejecucion.DataSource = SetActual(ProcesoActual);
-                TiempoRestante = ProcesoActual.TiempoMaximo;
-                TiempoTotal = 0;
-                TR.Text = TiempoRestante.ToString();
-                TT.Text = TiempoTotal.ToString();
-                //Espera.DataSource = SetEspera(LoteActual, bandera);
-            }
-            else if (Lotes.Count > 0)
-            {
-                LoteActual = Lotes.Dequeue();
-                //Espera.DataSource = SetEspera(LoteActual, bandera);
             }
             else
             {
@@ -118,7 +110,6 @@ namespace Practica01
                     ProcesoActual = null;
                     Ejecucion.DataSource = null;
                     int Contador = 0;
-                    int numLote = 1;
                     foreach (string resultado in Resultados)
                     {
                         try
@@ -127,8 +118,7 @@ namespace Practica01
                             {
                                 using (StreamWriter sw = File.CreateText(RutaResultados))
                                 {
-                                    numLote = 1;
-                                    sw.WriteLine("Resultado: " + resultado + " Numero de Lote: " + numLote);
+                                    sw.WriteLine("Resultado: " + resultado);
                                     sw.Close();
                                 }
                             }
@@ -136,12 +126,7 @@ namespace Practica01
                             {
                                 using (StreamWriter sw = File.AppendText(RutaResultados))
                                 {
-                                    if (Contador == 6)
-                                    {
-                                        Contador = 0;
-                                        numLote++;
-                                    }
-                                    sw.WriteLine("Resultado: " + resultado + " Numero de Lote: " + numLote);
+                                    sw.WriteLine("Resultado: " + resultado);
                                     sw.Close();
                                 }
                             }
@@ -155,7 +140,6 @@ namespace Practica01
                     Cronometro.Stop();
                 }
             }
-            ContadorLotes.Text = Lotes.Count.ToString();
 
             System.Threading.Thread.Sleep(1000);
         }
@@ -277,6 +261,7 @@ namespace Practica01
             return dt;
         }
 
+
         private void Espera_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyValue)
@@ -284,20 +269,34 @@ namespace Practica01
                 case (int)Keys.I:
                     if(isPaused == false)
                     {
-                        Lote miLote = new Lote();
-                        miLote = LoteActual;
-                        LoteActual.Procesos.Enqueue(ProcesoActual);
-                        if (miLote.Procesos.Count > 0)
+                        Queue<Proceso> miProceso = new Queue<Proceso>();
+
+                        if (banderas == false)
                         {
-                            ProcesoActual = miLote.Procesos.Dequeue();
-                           // SetEspera(miLote,true);
+                            miProceso = ProcesosDiagrama;
+
+                            ProcesosBloqueados.Enqueue(ProcesoActual);
+
+                            if (miProceso.Count > 0)
+                            {
+                                ProcesoActual = miProceso.Dequeue();
+                                Bloqueados.DataSource = SetEspera(ProcesosBloqueados, true);
+                            }
+                            else
+                            {
+                                ProcesoActual = ProcesosDiagrama.Dequeue();
+                                Bloqueados.DataSource = SetEspera(ProcesosBloqueados, true);
+                            }
+                            SetActual(ProcesoActual);
+                            banderas = true;
                         }
                         else
                         {
-                            ProcesoActual = LoteActual.Procesos.Dequeue();
-                            //SetEspera(LoteActual, true);
+                            ProcesosDiagrama.Enqueue(ProcesosBloqueados.Dequeue());
+                            Bloqueados.DataSource = null;
+                            banderas = false;
                         }
-                        SetActual(ProcesoActual);
+                        
                     }
                     break;
                 case (int)Keys.E:

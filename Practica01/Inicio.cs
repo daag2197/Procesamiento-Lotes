@@ -13,7 +13,7 @@ namespace Practica01
 {
     public partial class WIN_Inicio : Form
     {
-        const int MaximoLote = 6; //Maximo Por Lotes
+        
         int NProcesos; //Numero de Procesos
         int TiempoMax;
         int NumeroPrograma = 1;

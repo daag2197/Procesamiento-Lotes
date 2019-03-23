@@ -45,19 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fifo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Fifo.Designer.cs">
-      <DependentUpon>Fifo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lote.cs" />
     <Compile Include="Proceso.cs" />
     <Compile Include="Procesos.cs">
       <SubType>Form</SubType>
@@ -67,9 +60,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FiFo.resx">
-      <DependentUpon>Fifo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
