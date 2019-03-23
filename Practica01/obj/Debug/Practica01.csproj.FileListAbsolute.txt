@@ -14,7 +14,6 @@ C:\Users\Diego\Documents\GitHub\Procesamiento-Lotes\Practica01\bin\Debug\Practic
 C:\Users\Diego\Documents\GitHub\Procesamiento-Lotes\Practica01\bin\Debug\Practica01.exe
 C:\Users\Diego\Documents\GitHub\Procesamiento-Lotes\Practica01\bin\Debug\Practica01.pdb
 C:\Users\Diego\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.csprojAssemblyReference.cache
-C:\Users\Diego\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.AgregarProceso.resources
 C:\Users\Diego\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.WIN_Inicio.resources
 C:\Users\Diego\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.WIN_Procesos.resources
 C:\Users\Diego\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.Properties.Resources.resources
@@ -34,3 +33,4 @@ d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Prac
 d:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.pdb
 D:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.csprojAssemblyReference.cache
 D:\Users\Darevalo\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.WIN_FIFO.resources
+C:\Users\Diego\Documents\GitHub\Procesamiento-Lotes\Practica01\obj\Debug\Practica01.WIN_FIFO.resources

@@ -133,24 +133,7 @@ namespace Practica01
                 }
                 NumeroPrograma++;
             }
-            int i = 0;
-            Queue<Lote> ListaLotes = new Queue<Lote>();
-            Queue<Proceso> lote = new Queue<Proceso>();
-            while (ColaProcesos.Count > 0)
-            {
-                lote.Enqueue(ColaProcesos.Dequeue());
-                if (++i >= MaximoLote)
-                {
-                    i = 0;
-                    ListaLotes.Enqueue(new Lote(lote));
-                    lote = new Queue<Proceso>();
-                }
-            }
-            if (lote.Count > 0)
-            {
-                ListaLotes.Enqueue(new Lote(lote));
-            }
-            WIN_Procesos Ventana = new WIN_Procesos(ListaLotes);
+            WIN_Procesos Ventana = new WIN_Procesos(ColaProcesos);
             this.Hide();
             Ventana.Show();
         }

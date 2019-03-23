@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Threading;
 
 namespace Practica01
 {
     public partial class WIN_FIFO : Form
     {
-        Queue<Proceso> ProcesosListos = new Queue<Proceso>();//Lista de Procesos Listos
+        Queue<Proceso> ProcesosDiagrama = new Queue<Proceso>();//Lista de Procesos Listos
         Queue<Proceso> ProcesosNuevos = new Queue<Proceso>();//Lista de Procesos Nuevos
 
         Proceso ProcesoActual; //Proceso en Ejecución
@@ -29,9 +31,25 @@ namespace Practica01
         public WIN_FIFO(Queue<Proceso> ProcesosNuevos)
         {
             this.ProcesosNuevos = ProcesosNuevos;
-            while (ProcesosListos.Count < 7)
+
+            /*ProcesoActual = ProcesosNuevos.Dequeue();
+            TiempoRestante = ProcesoActual.TiempoMaximo;
+            TiempoTotal = 0;
+            TR.Text = TiempoRestante.ToString();
+            TT.Text = TiempoTotal.ToString();*/
+            while (ProcesosDiagrama.Count < 7)
             {
-                ProcesosListos.Enqueue(ProcesosNuevos.Dequeue());
+                if(bandera == false)
+                {
+                    ProcesoActual = ProcesosNuevos.Dequeue();
+                    TiempoRestante = ProcesoActual.TiempoMaximo;
+                    TiempoTotal = 0;
+                    TR.Text = TiempoRestante.ToString();
+                    TT.Text = TiempoTotal.ToString();
+                    Ejecucion.DataSource = SetActual(ProcesoActual);
+                    bandera = true;
+                }
+                ProcesosDiagrama.Enqueue(ProcesosNuevos.Dequeue());
             }
             InitializeComponent();
             Cronometro.Start();
@@ -47,7 +65,7 @@ namespace Practica01
                 TT.Text = (++TiempoTranscurrido).ToString();
                 TR.Text = (--TiempoRestante).ToString();
             }
-            else if(ProcesosListos.Count > 0)
+            /*else if(ProcesosListos.Count > 0)
             {
                 bandera = true;
                 if(ProcesoActual != null)
@@ -68,7 +86,32 @@ namespace Practica01
                 TiempoTotal = 0;
                 TR.Text = TiempoRestante.ToString();
                 TT.Text = TiempoTotal.ToString();
-            }
+            }*/
         }
+        private DataTable SetActual(Proceso p)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Nombre Programador");
+            dt.Columns.Add("Operacion");
+            dt.Columns.Add("Tiempo Maximo Espera");
+            dt.Columns.Add("Numero de Programa");
+
+            dt.Rows.Add(p.Nombre, p.Operacion, p.TiempoMaximo, p.NumPrograma);
+            try
+            {
+                using (StreamWriter sw = File.AppendText(Ruta))
+                {
+                    sw.WriteLine("Proceso en Ejecucion");
+                    sw.WriteLine("Nombre Programador: " + p.Nombre + " Operacion: " + p.Operacion + " TME: " + p.TiempoMaximo + " Numero de Programa: " + p.NumPrograma);
+                    sw.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exeption: " + ex.Message);
+            }
+            return dt;
+        }
+
     }
 }

@@ -15,10 +15,14 @@ namespace Practica01
 {
     public partial class WIN_Procesos : Form
     {
+        Queue<Proceso> ProcesosDiagrama = new Queue<Proceso>();//Lista de Procesos Listos
+        Queue<Proceso> ProcesosNuevos = new Queue<Proceso>();//Lista de Procesos Nuevos
+        List<Proceso> Concluidos = new List<Proceso>();//Procesos Terminados
+
         Queue<Lote> Lotes = new Queue<Lote>();
         Lote LoteActual = new Lote();
         Proceso ProcesoActual;
-        List<Proceso> Concluidos = new List<Proceso>();
+        
         List<string> Resultados = new List<string>();
         int TiempoTranscurrido = 0;
         int TiempoRestante = 0;
@@ -27,15 +31,29 @@ namespace Practica01
         string RutaResultados = "Resultados.txt";
         bool bandera = false;
         bool isPaused = false;
+        bool PrimeraVuelta;
 
-        public WIN_Procesos(Queue<Lote> Lotes)
+        public WIN_Procesos(Queue<Proceso> ProcesosNuevos)
         {
-            this.Lotes = Lotes;
             InitializeComponent();
+            this.ProcesosNuevos = ProcesosNuevos;
 
-            /*ThreadStart Crono = new ThreadStart(IniciarTimer);
-            Thread hilo = new Thread(Crono);
-            hilo.Start();*/
+            while (ProcesosDiagrama.Count < 5)
+            {
+                if (bandera == false)
+                {
+                    ProcesoActual = ProcesosNuevos.Dequeue();
+                    TiempoRestante = ProcesoActual.TiempoMaximo;
+                    TiempoTotal = 0;
+                    TR.Text = TiempoRestante.ToString();
+                    TT.Text = TiempoTotal.ToString();
+                    Ejecucion.DataSource = SetActual(ProcesoActual);
+                    bandera = true;
+                }
+                ProcesosDiagrama.Enqueue(ProcesosNuevos.Dequeue());
+                Espera.DataSource = SetEspera(ProcesosDiagrama, bandera);
+            }
+            
             Cronometro.Start();
         }
         private void Cronometro_Tick(object sender, EventArgs e)
@@ -47,6 +65,22 @@ namespace Practica01
                 Cont.Text = (++TiempoTotal).ToString();
                 TT.Text = (++TiempoTranscurrido).ToString();
                 TR.Text = (--TiempoRestante).ToString();
+            }
+            else if(ProcesosDiagrama.Count > 0)
+            {
+                if(ProcesoActual != null)
+                {
+                    if(PrimeraVuelta == true)
+                    {
+                        Concluidos.Add(ProcesoActual);
+                        Resultados.Add(ProcesoActual.Resultado);
+                        PrimeraVuelta = false;
+                    }
+                    if (Concluidos.Count > 0)
+                    {
+                        Terminado.DataSource = SetCompletados(Concluidos);
+                    }
+                }
             }
             else if (LoteActual.Procesos.Count > 0)
             {
@@ -67,12 +101,12 @@ namespace Practica01
                 TiempoTotal = 0;
                 TR.Text = TiempoRestante.ToString();
                 TT.Text = TiempoTotal.ToString();
-                Espera.DataSource = SetEspera(LoteActual, bandera);
+                //Espera.DataSource = SetEspera(LoteActual, bandera);
             }
             else if (Lotes.Count > 0)
             {
                 LoteActual = Lotes.Dequeue();
-                Espera.DataSource = SetEspera(LoteActual, bandera);
+                //Espera.DataSource = SetEspera(LoteActual, bandera);
             }
             else
             {
@@ -126,7 +160,7 @@ namespace Practica01
             System.Threading.Thread.Sleep(1000);
         }
 
-        private DataTable SetEspera(Lote lote, bool bandera)
+        private DataTable SetEspera(Queue<Proceso> ProcesoEspera, bool bandera)
         {
 
             DataTable dt = new DataTable();
@@ -159,7 +193,7 @@ namespace Practica01
                     MessageBox.Show("Exepcion: " + ex);
                 }
             }
-            foreach (Proceso p in lote.Procesos)
+            foreach (Proceso p in ProcesoEspera)
             {
                 dt.Rows.Add(p.NumPrograma, p.Nombre, p.TiempoMaximo);
                 if (bandera == true)
@@ -256,12 +290,12 @@ namespace Practica01
                         if (miLote.Procesos.Count > 0)
                         {
                             ProcesoActual = miLote.Procesos.Dequeue();
-                            SetEspera(miLote,true);
+                           // SetEspera(miLote,true);
                         }
                         else
                         {
                             ProcesoActual = LoteActual.Procesos.Dequeue();
-                            SetEspera(LoteActual, true);
+                            //SetEspera(LoteActual, true);
                         }
                         SetActual(ProcesoActual);
                     }
