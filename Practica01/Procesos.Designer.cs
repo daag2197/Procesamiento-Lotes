@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.LotesPendientes = new System.Windows.Forms.Label();
             this.Espera = new System.Windows.Forms.DataGridView();
             this.STC_ProcesosEspera = new System.Windows.Forms.Label();
             this.Ejecucion = new System.Windows.Forms.DataGridView();
@@ -44,11 +43,11 @@
             this.Cont = new System.Windows.Forms.Label();
             this.TT = new System.Windows.Forms.Label();
             this.TR = new System.Windows.Forms.Label();
-            this.ContadorLotes = new System.Windows.Forms.Label();
             this.Bloqueados = new System.Windows.Forms.DataGridView();
             this.Nuevos = new System.Windows.Forms.DataGridView();
             this.STC_Nuevos = new System.Windows.Forms.Label();
             this.STC_Bloqueados = new System.Windows.Forms.Label();
+            this.Bloqueado = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Espera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ejecucion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Terminado)).BeginInit();
@@ -63,18 +62,9 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(422, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(333, 39);
+            this.label1.Size = new System.Drawing.Size(215, 39);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Procesamiento de Lotes";
-            // 
-            // LotesPendientes
-            // 
-            this.LotesPendientes.AutoSize = true;
-            this.LotesPendientes.Location = new System.Drawing.Point(12, 66);
-            this.LotesPendientes.Name = "LotesPendientes";
-            this.LotesPendientes.Size = new System.Drawing.Size(85, 13);
-            this.LotesPendientes.TabIndex = 5;
-            this.LotesPendientes.Text = "Lotes Faltantes: ";
+            this.label1.Text = "Procesamiento";
             // 
             // Espera
             // 
@@ -195,16 +185,6 @@
             this.TR.Size = new System.Drawing.Size(0, 13);
             this.TR.TabIndex = 17;
             // 
-            // ContadorLotes
-            // 
-            this.ContadorLotes.AutoSize = true;
-            this.ContadorLotes.Location = new System.Drawing.Point(138, 66);
-            this.ContadorLotes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ContadorLotes.Name = "ContadorLotes";
-            this.ContadorLotes.Size = new System.Drawing.Size(35, 13);
-            this.ContadorLotes.TabIndex = 18;
-            this.ContadorLotes.Text = "label2";
-            // 
             // Bloqueados
             // 
             this.Bloqueados.AllowUserToAddRows = false;
@@ -247,6 +227,10 @@
             this.STC_Bloqueados.TabIndex = 22;
             this.STC_Bloqueados.Text = "Procesos Bloqueados";
             // 
+            // Bloqueado
+            // 
+            this.Bloqueado.Tick += new System.EventHandler(this.Bloqueado_Tick);
+            // 
             // WIN_Procesos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,7 +240,6 @@
             this.Controls.Add(this.STC_Nuevos);
             this.Controls.Add(this.Nuevos);
             this.Controls.Add(this.Bloqueados);
-            this.Controls.Add(this.ContadorLotes);
             this.Controls.Add(this.TR);
             this.Controls.Add(this.TT);
             this.Controls.Add(this.Cont);
@@ -269,7 +252,6 @@
             this.Controls.Add(this.Ejecucion);
             this.Controls.Add(this.STC_ProcesosEspera);
             this.Controls.Add(this.Espera);
-            this.Controls.Add(this.LotesPendientes);
             this.Controls.Add(this.label1);
             this.Name = "WIN_Procesos";
             this.Text = "Procesos";
@@ -286,7 +268,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LotesPendientes;
         private System.Windows.Forms.DataGridView Espera;
         private System.Windows.Forms.Label STC_ProcesosEspera;
         private System.Windows.Forms.DataGridView Ejecucion;
@@ -300,10 +281,10 @@
         private System.Windows.Forms.Label Cont;
         private System.Windows.Forms.Label TT;
         private System.Windows.Forms.Label TR;
-        private System.Windows.Forms.Label ContadorLotes;
         private System.Windows.Forms.DataGridView Bloqueados;
         private System.Windows.Forms.DataGridView Nuevos;
         private System.Windows.Forms.Label STC_Nuevos;
         private System.Windows.Forms.Label STC_Bloqueados;
+        private System.Windows.Forms.Timer Bloqueado;
     }
 }

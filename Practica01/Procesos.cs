@@ -30,9 +30,9 @@ namespace Practica01
         string Ruta = "Procesamiento.txt";
         string RutaResultados = "Resultados.txt";
         bool bandera = false;
-        bool banderas = false;
         bool isPaused = false;
-
+        int Contador = 3;
+        bool Bandera = false;    
         public WIN_Procesos(Queue<Proceso> ProcesosNuevos)
         {
             InitializeComponent();
@@ -68,7 +68,24 @@ namespace Practica01
         private void Cronometro_Tick(object sender, EventArgs e)
         {
             this.Focus();
-
+            if(Bandera == true)
+            {
+                Contador--;
+                if(Contador == 0)
+                {
+                    ProcesosDiagrama.Enqueue(ProcesosBloqueados.Dequeue());
+                    Bloqueados.DataSource = SetEspera(ProcesosBloqueados, true);
+                    if(ProcesosBloqueados.Count > 0)
+                    {
+                        Bandera = true;
+                    }
+                    else
+                    {
+                        Bandera = false;
+                    }
+                    Contador = 3;
+                }
+            }
             if (TiempoRestante > 0)
             {
                 Cont.Text = (++TiempoTotal).ToString();
@@ -269,33 +286,24 @@ namespace Practica01
                 case (int)Keys.I:
                     if(isPaused == false)
                     {
+                        
                         Queue<Proceso> miProceso = new Queue<Proceso>();
 
-                        if (banderas == false)
+                        miProceso = ProcesosDiagrama;
+                        ProcesosBloqueados.Enqueue(ProcesoActual);
+
+                        if(miProceso.Count > 0)
                         {
-                            miProceso = ProcesosDiagrama;
-
-                            ProcesosBloqueados.Enqueue(ProcesoActual);
-
-                            if (miProceso.Count > 0)
-                            {
-                                ProcesoActual = miProceso.Dequeue();
-                                Bloqueados.DataSource = SetEspera(ProcesosBloqueados, true);
-                            }
-                            else
-                            {
-                                ProcesoActual = ProcesosDiagrama.Dequeue();
-                                Bloqueados.DataSource = SetEspera(ProcesosBloqueados, true);
-                            }
-                            SetActual(ProcesoActual);
-                            banderas = true;
+                            ProcesoActual = miProceso.Dequeue();
+                            Bloqueados.DataSource = SetEspera(ProcesosBloqueados, true);
                         }
                         else
                         {
-                            ProcesosDiagrama.Enqueue(ProcesosBloqueados.Dequeue());
-                            Bloqueados.DataSource = null;
-                            banderas = false;
+                            ProcesoActual = ProcesosDiagrama.Dequeue();
+                            Bloqueados.DataSource = SetEspera(ProcesosBloqueados, true);
                         }
+                        SetActual(ProcesoActual);
+                        Bandera = true;
                         
                     }
                     break;
@@ -322,6 +330,21 @@ namespace Practica01
                     }
                     break;
             }
+        }
+
+        private void Bloqueado_Tick(object sender, EventArgs e)
+        {
+            
+            if(Contador > 0)
+            {
+                Contador--;
+            }
+            else
+            {
+                MessageBox.Show("hola");
+                Bloqueado.Stop();
+            }
+            System.Threading.Thread.Sleep(1000);
         }
     }
 }
