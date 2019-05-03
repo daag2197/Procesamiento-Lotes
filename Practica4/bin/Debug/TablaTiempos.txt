@@ -1,0 +1,12 @@
+ID: 3 Nombre: Sofia Tiempo LLegada: 0 Tiempo Final: 20 Tiempo Retorno: 20 Tiempo Espera: 16 Tiempo de Servicio: 4
+ID: 2 Nombre: Martha Tiempo LLegada: 0 Tiempo Final: 31 Tiempo Retorno: 31 Tiempo Espera: 23 Tiempo de Servicio: 8
+ID: 1 Nombre: Martha Tiempo LLegada: 0 Tiempo Final: 40 Tiempo Retorno: 40 Tiempo Espera: 31 Tiempo de Servicio: 9
+ID: 4 Nombre: Martha Tiempo LLegada: 0 Tiempo Final: 59 Tiempo Retorno: 59 Tiempo Espera: 52 Tiempo de Servicio: 7
+ID: 6 Nombre: Martha Tiempo LLegada: 0 Tiempo Final: 69 Tiempo Retorno: 69 Tiempo Espera: 56 Tiempo de Servicio: 13
+ID: 9 Nombre: Sofia Tiempo LLegada: 40 Tiempo Final: 69 Tiempo Retorno: 29 Tiempo Espera: 26 Tiempo de Servicio: 3
+ID: 10 Nombre: Alejandro Tiempo LLegada: 59 Tiempo Final: 70 Tiempo Retorno: 11 Tiempo Espera: 10 Tiempo de Servicio: 1
+ID: 8 Nombre: Diego Tiempo LLegada: 31 Tiempo Final: 70 Tiempo Retorno: 39 Tiempo Espera: 33 Tiempo de Servicio: 6
+ID: 5 Nombre: Maria Tiempo LLegada: 0 Tiempo Final: 70 Tiempo Retorno: 70 Tiempo Espera: 60 Tiempo de Servicio: 10
+ID: 7 Nombre: Guadalupe Tiempo LLegada: 20 Tiempo Final: 80 Tiempo Retorno: 60 Tiempo Espera: 47 Tiempo de Servicio: 13
+ID: 11 Nombre: Sofia Tiempo LLegada: 69 Tiempo Final: 87 Tiempo Retorno: 18 Tiempo Espera: 11 Tiempo de Servicio: 7
+ID: 12 Nombre: Julio Tiempo LLegada: 69 Tiempo Final: 91 Tiempo Retorno: 22 Tiempo Espera: 12 Tiempo de Servicio: 10

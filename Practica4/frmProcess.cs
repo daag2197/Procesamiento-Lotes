@@ -12,26 +12,30 @@ using System.IO;
 
 namespace SeminarioSO
 {
-    public partial class Procesos : Form
+    public partial class frmProcess : Form
     {
         const int MAX_PROCESOS = 6;
+        int MAX_QUANTUM;
 
         Queue<clsProceso> ProcesosNuevos = new Queue<clsProceso>();
         Queue<clsProceso> ProcesosListos = new Queue<clsProceso>();
         Queue<clsProceso> ProcesosBloqueados = new Queue<clsProceso>();
         clsProceso ProcesoActual;
 
-        string RutaResultados = "Resultados.txt";
-        List<string> Resultados = new List<string>();
         List<clsProceso> Concluidos = new List<clsProceso>();
-        int Counter = 0, CountProcesos = 0;
+        List<string> Resultados = new List<string>();
+        string RutaResultados = "Resultados.txt";
+
+        int Counter = 0, CountProcesos = 0, Quantum = 0;
         Random R = new Random();
 
-        public Procesos(Queue<clsProceso> Nuevos)
+        public frmProcess(Queue<clsProceso> Nuevos, int Quantum)
         {
             this.ProcesosNuevos = Nuevos;
+            MAX_QUANTUM = Quantum;
             InitializeComponent();
             timer1.Start();
+            lblMaxQuantum.Text = Quantum.ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -54,6 +58,7 @@ namespace SeminarioSO
                 lblCounter.Text = (++Counter).ToString();
                 txtTR.Text = (--ProcesoActual.TR).ToString();
                 txtTT.Text = (ProcesoActual.TME - ProcesoActual.TR).ToString();
+                lblQuantum.Text = (++Quantum).ToString();
             }
             else if (ProcesosListos.Count > 0)
             {
@@ -63,6 +68,7 @@ namespace SeminarioSO
             else if(ProcesosNuevos.Count == 0 && ProcesosBloqueados.Count == 0)
             {
                 AddConcluido();
+                
                 foreach (string resultado in Resultados)
                 {
                     try
@@ -104,9 +110,15 @@ namespace SeminarioSO
             lblCounterLote.Text = ProcesosNuevos.Count.ToString();
             setData(ProcesoActual);
             ProcessBloqueados();
+
+            if(Quantum >= MAX_QUANTUM)
+            {
+                ProcesosListos.Enqueue(ProcesoActual);
+                setActual();
+            }
         }
 
-        private DataTable SetActual(Queue<clsProceso> L)
+        private DataTable SetListos(Queue<clsProceso> L)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("ID");
@@ -116,7 +128,7 @@ namespace SeminarioSO
 
             foreach (clsProceso P in L)
             {
-                dt.Rows.Add(P.Numero, P.Nombre, P.TME, P.TR);
+                dt.Rows.Add(P.Numero,P.Nombre,P.TME, P.TR);
             }
 
             return dt;
@@ -186,6 +198,7 @@ namespace SeminarioSO
                 txtTME.Text = P.TME.ToString();
                 txtTT.Text = (P.TME - P.TR).ToString();
                 txtTR.Text = (P.TR).ToString();
+                lblQuantum.Text = Quantum.ToString();
             }
             else
             {
@@ -194,8 +207,9 @@ namespace SeminarioSO
                 txtTME.Text = "";
                 txtTT.Text = "";
                 txtTR.Text = "";
+                lblQuantum.Text = "";
             }
-            dgActual.DataSource = SetActual(ProcesosListos);
+            dgActual.DataSource = SetListos(ProcesosListos);
             dgConcluidos.DataSource = SetConcluidos(Concluidos);
         }
 
@@ -285,6 +299,7 @@ namespace SeminarioSO
                 {
                     ProcesoActual.Respuesta = Counter - ProcesoActual.Llegada;
                 }
+                Quantum = 0;
             }
             else
             {

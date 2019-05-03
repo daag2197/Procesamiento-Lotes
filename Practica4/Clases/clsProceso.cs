@@ -32,13 +32,14 @@ namespace SeminarioSO.Clases
             Martha
         }
 
+        public string Nombre;
+
         public string Operacion;
         public string Resultado;
         public int TME; //Tiempo Maximo Estimado
         public int TR; //Tiempo Restante
         public int Numero;
         public bool Concluido = false;
-        public string Nombre;
 
         public int Llegada = -1;
         public int Finalizacion;
@@ -50,7 +51,7 @@ namespace SeminarioSO.Clases
 
         private static int ID;
 
-        public clsProceso(string Nombre,string Operacion, string Resultado, int TME, int Numero)
+        public clsProceso(string Nombre, string Operacion, string Resultado, int TME, int Numero)
         {
             this.Nombre = Nombre;
             this.Operacion = Operacion;
@@ -61,6 +62,7 @@ namespace SeminarioSO.Clases
             this.Respuesta = -1;
         }
 
+        //Se requiere recibir el Random para evitar la misma informacion
         public clsProceso(Random R)
         {
             decimal N1, N2, Resultado;
@@ -103,12 +105,12 @@ namespace SeminarioSO.Clases
             this.Operacion = N1.ToString() + Signo + N2.ToString();
             this.Resultado = Math.Round(Resultado, 4).ToString();
             this.TME = this.TR = this.Servicio = R.Next(7, 18);
-
+            
             this.Numero = ID;
             this.Respuesta = -1;
             try
             {
-                if (!File.Exists("Lotes.txt"))
+                if(!File.Exists("Lotes.txt"))
                 {
                     using (StreamWriter sw = File.CreateText("Lotes.txt"))
                     {
@@ -125,7 +127,7 @@ namespace SeminarioSO.Clases
                     }
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show("Exeption: " + ex.Message);
             }
@@ -136,6 +138,7 @@ namespace SeminarioSO.Clases
 
         public clsProceso(clsProceso p)
         {
+            this.Nombre = p.Nombre;
             this.Operacion = p.Operacion;
             this.Resultado = p.Resultado;
             this.TME = p.TME;

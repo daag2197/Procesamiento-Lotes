@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SeminarioSO.Clases;
 using System.IO;
-    
+
 namespace SeminarioSO
 {
     public partial class frmConcluido : Form
@@ -62,6 +62,7 @@ namespace SeminarioSO
                 {
                     dt.Rows.Add(P.Numero, P.Operacion, "", P.TME, P.Llegada, "", "", P.Respuesta == -1 ? "" : P.Respuesta.ToString(), P.Espera, P.Servicio, P.Bloqueado > 0 ? 10 - P.Bloqueado: P.Bloqueado);
                 }
+
                 try
                 {
                     using (StreamWriter sw = File.AppendText("TablaTiempos.txt"))
